@@ -7,3 +7,6 @@ class UserCreate(BaseModel):
 class UserLogin(BaseModel):
     username: str
     password: str
+
+class ContactAdd(BaseModel):
+    contact_user_id: int
