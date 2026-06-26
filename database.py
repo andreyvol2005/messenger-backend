@@ -1,5 +1,4 @@
 import psycopg2
-from psycopg2.extras import RealDictCursor
 import os
 from dotenv import load_dotenv
 
@@ -14,7 +13,7 @@ DB_CONFIG = {
 }
 
 def get_db():
-    conn = psycopg2.connect(**DB_CONFIG, cursor_factory=RealDictCursor)
+    conn = psycopg2.connect(**DB_CONFIG)
     conn.cursor().execute("SET search_path TO messenger, public;")
     conn.commit()
     try:
